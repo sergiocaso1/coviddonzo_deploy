@@ -1,0 +1,67 @@
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<div class="form-floating row">
+
+    <label class="col-auto">
+        <h3>Scegli una data per visualizzarne la situazione</h3>
+    </label>
+    <input type="date" class="form-control col" [(ngModel)]="data" (change)="ricercaBollettinoCovid()">
+
+</div><!--  -->
+<ng-container *ngIf="data">
+    <div class="row" >
+        <h4 class="text-primary col-8">
+
+
+            Andamento della pandemia per il giorno : {{prova}}
+        </h4>
+        <button class="btn btn-primary mb-3 ml-2 col-3" (click)="visualizzaFormatt()" *ngIf="!formatt">Vedi dati formattati</button>
+        <button class="btn btn-primary mb-3 ml-2 col-3" (click)="ricercaBollettinoCovid()" *ngIf="formatt">Vedi dati array</button>
+
+    </div>
+
+    <table class="table" *ngIf="!formatt">
+        <thead>
+            <tr>
+                <th>
+                    chiave
+                </th>
+                <th>
+                    valore
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let oggett of oggetto">
+                <td>
+                    {{oggett}}
+                </td>
+                <td>
+                    {{arrayy[oggett]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+
+
+
+
+<!-- <input type="text" value="User input Text to copy {{dataFormatt}} {{variabile}}" #userinput> -->
+<ng-container class="row"*ngIf="formatt">
+<textarea name="" id="" cols="50" rows="15" class="form-control col-9" #userinput>
+Coronavirus  {{dataFormatt}} 
+    
+Attualmente positivi: {{totale_positivi}}
+Deceduti: {{deceduti}}
+Dimessi/Guariti: {{guariti}}
+Ricoverati: {{ricoverati}}
+Ricoverati in Terapia Intensiva: {{terapiaI}}
+Tamponi: {{tamponi}}
+Totale casi: {{totale_casi}}
+</textarea>      
+<button class="btn btn-secondary col-3" (click)="copyInputMessage(userinput)" value="click to copy">Copy from Textbox</button>
+</ng-container>
