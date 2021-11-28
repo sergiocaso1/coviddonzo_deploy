@@ -8,7 +8,7 @@
     <label class="col-auto">
         <h3>Scegli una data per visualizzarne la situazione</h3>
     </label>
-    <input type="date" class="form-control col" [(ngModel)]="data" (change)="ricercaBollettinoCovid()">
+    <input type="date" class="form-control col" [(ngModel)]="data" (change)="ricercaBollettinoCovid()" name="cerca una data">
 
 </div><!--  -->
 <ng-container *ngIf="data">
