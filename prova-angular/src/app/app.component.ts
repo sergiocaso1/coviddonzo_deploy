@@ -1,5 +1,6 @@
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceApiService } from './service-api.service';
 
 @Component({
@@ -9,5 +10,12 @@ import { ServiceApiService } from './service-api.service';
 })
 export class AppComponent {
 
+  constructor(
+   
+   
+  ){}
+
   title = 'prova-angular';
+
+  
 }

@@ -8,6 +8,7 @@ import { CercaPerDataComponent } from './cerca-per-data/cerca-per-data.component
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { GraficiComponent } from './grafici/grafici.component';
 
 
 
@@ -17,13 +18,15 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     CercaPerDataComponent,
-    HomeComponent
+    HomeComponent,
+    GraficiComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule  ,
     AppRoutingModule  ,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [
     ServiceApiService
